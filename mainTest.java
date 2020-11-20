@@ -58,4 +58,13 @@ public class mainTest {
         Assert.assertEquals(0,sum);
     }
     
+    @Test
+    public void testAdddelim() {
+        
+        main obj = new main();
+        String nums="//;\n;1;2;3";
+        int sum=obj.add(nums);
+        Assert.assertEquals(0,sum);
+    }
+    
 }
