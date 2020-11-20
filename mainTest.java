@@ -44,7 +44,7 @@ public class mainTest {
     public void testAdd() {
         
         main obj = new main();
-        String nums="//;1;2;3";
+        String nums="//;\n;1;2;3";
         int sum=obj.add(nums);
         Assert.assertEquals(6,sum);
     }
@@ -55,7 +55,7 @@ public class mainTest {
         main obj = new main();
         String nums="//,\n,1,2,3";
         int sum=obj.add(nums);
-        Assert.assertEquals(0,sum);
+        Assert.assertEquals(6,sum);
     }
     
     @Test
@@ -64,7 +64,27 @@ public class mainTest {
         main obj = new main();
         String nums="//;\n;1;2;3";
         int sum=obj.add(nums);
+        Assert.assertEquals(6,sum);
+    }
+    
+    @Test
+    public void testAddNegatives() {
+        
+        main obj = new main();
+        String nums="//;\n;-1;-2;3";
+        int sum=obj.add(nums);
         Assert.assertEquals(0,sum);
     }
+    
+    @Test
+    public void testAddSum() {
+        
+        main obj = new main();
+        String nums="//;\n;1000;2;3;10001";
+        int sum=obj.add(nums);
+        Assert.assertEquals(1005,sum);
+    }
+    
+    
     
 }
