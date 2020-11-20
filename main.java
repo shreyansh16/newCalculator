@@ -15,7 +15,16 @@ public class main {
         int sum=0;
         for(int i=0;i<nums.length();i++)
         {
-            if(Character.isDigit(nums.charAt(i)))
+            if(nums.charAt(i)==',' && nums.charAt(i+1)=='\n' )
+            {
+              System.out.println("Error!");
+              return 0;
+            }
+       
+           else if(nums.charAt(i)=='\n' || nums.charAt(i)==',')
+            continue;
+        
+         else if(Character.isDigit(nums.charAt(i)))
                 sum+=(nums.charAt(i)-'0');
         }
         return sum;
